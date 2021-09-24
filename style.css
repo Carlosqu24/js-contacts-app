@@ -16,7 +16,6 @@
 
 body {
       background: rgb(46, 46, 46);
-      
 }
 
 .app {
@@ -81,6 +80,7 @@ body {
 
       background: rgb(255, 255, 255);
       color: #000;
+      object-fit: cover;
 
       display: flex;
       flex-direction: column;
@@ -102,7 +102,6 @@ body {
       height: auto;
       width: 50%;
       margin-top: 30px;
-      /* padding: 1rem; */
 
       color: #fff;
 
@@ -114,7 +113,6 @@ body {
 
 .card {
       min-height: 450px;
-      /*min-width: 400px; */
       width: 100%;
       
       padding: 1rem;
@@ -144,6 +142,8 @@ body {
 .card__urlImg {
       width: 200px;
       height: 200px;
+
+      object-fit: cover;
 }
 
 .actions__btn {
