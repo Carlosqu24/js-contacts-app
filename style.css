@@ -29,9 +29,9 @@ body {
 
 .up {
       height: auto;
-      width: 50%;
+      width: 100%;
       /* width: 100%; */
-      padding: 1rem;
+      /* padding: 1rem; */
 
       background: rgb(255, 255, 255);
 
@@ -42,7 +42,7 @@ body {
 }
 
 .form-contact {
-      width: 100%;
+      width: 50%;
       height: 400px;
       padding: 1rem;
 
@@ -179,6 +179,12 @@ body {
       }
 
       .contacts-flex {
+            width: 100%;
+      }
+}
+
+@media screen and (max-width: 650px) {
+      .form-contact {
             width: 100%;
       }
 }
