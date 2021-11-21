@@ -1,9 +1,12 @@
 :root {
-      --primary-font: 'Source Sans Pro', sans-serif;
+      --primary-font: 'Inter', sans-serif;
+      --secondary-font: 'Poppins', sans-serif;
 
       /* COLORS */
       --color-gray: rgb(34, 34, 34); 
       --color-light-gray: rgb(128, 128, 128); 
+
+      --white-bg: rgb(240, 240, 240);
 }
 
 * {
@@ -15,7 +18,7 @@
 }
 
 body {
-      background: rgb(46, 46, 46);
+      background: var(--white-bg);
 }
 
 .app {
@@ -33,9 +36,11 @@ body {
       /* width: 100%; */
       /* padding: 1rem; */
 
-      background: rgb(255, 255, 255);
+      background: var(--white-bg);
+      background: #fff;
 
       display: flex;
+      flex-direction: column;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-around;
@@ -60,6 +65,7 @@ body {
       padding: 12px;
 
       background: rgb(241, 241, 241);
+      font-size: 16px;
 
       border: none;
       outline: none;
@@ -78,7 +84,7 @@ body {
       height: 400px;
       padding: 1rem;
 
-      background: rgb(255, 255, 255);
+      background: #fff;
       color: #000;
       object-fit: cover;
 
@@ -89,9 +95,18 @@ body {
 }
 
 #imgPreview {
-      height: 200px;
-      width: 200px;
+      height: 100%;
+      width: 100%;
       object-fit: cover;
+}
+
+
+/* DRAG AREA */
+.drag-area {
+      width: 200px;
+      height: 200px;
+
+      border: 1px dashed #000;
 }
 
 
@@ -100,26 +115,31 @@ body {
 
 .contacts-flex {
       height: auto;
-      width: 50%;
+      width: 100%;
       margin-top: 30px;
 
       color: #fff;
 
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 2rem;
 }
 
 .card {
-      min-height: 450px;
+      /* min-height: 450px; */
+      margin: auto;
       width: 100%;
+      max-width: 286px;
       
+      padding: 0rem;
       padding: 1rem;
-      margin-bottom: 20px;
+      /* margin-bottom: 20px; */
 
-      background: #000;
-      color: #fff;
+      background: var(--white-bg);
+      background: rgb(245, 245, 245);
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      color: rgb(0, 0, 0);
       
       display: flex;
       flex-direction: column;
@@ -127,23 +147,15 @@ body {
       justify-content: space-around;
 }
 
-.card__img-top {
-      width: 100%;
-      height: 30%;
-
-      overflow: hidden;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+.card * {
+      margin: 10px 0;
 }
 
 .card__urlImg {
-      width: 200px;
-      height: 200px;
+      max-height: 200px;
+      width: 100%;
 
-      object-fit: cover;
+      object-fit: contain;  
 }
 
 .actions__btn {
@@ -166,6 +178,8 @@ body {
 
 .actions__btn--delete {
       background: rgb(204, 40, 40);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      color: #fff;
 }
 
 .actions__btn--delete:hover {
@@ -173,15 +187,29 @@ body {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1058px) {
       .up {
             width: 100%;     
       }
 
       .contacts-flex {
             width: 100%;
+
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
       }
 }
+
+/* @media screen and (max-width: 768px) {
+      .up {
+            width: 100%;     
+      }
+
+      .contacts-flex {
+            width: 100%;
+
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      }
+} */
 
 @media screen and (max-width: 650px) {
       .form-contact {

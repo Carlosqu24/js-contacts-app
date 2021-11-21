@@ -70,12 +70,10 @@ const showContacts = (contacts) => {
 
                   html += `
                         <div id="${contact.id}" class="card">
-                              <div class="card__img-top">
-                                    <img src="${contact.urlImg}" class="card__urlImg">
-                              </div>
+                              <img src="${contact.urlImg}" class="card__urlImg">
                               <h2 class="card__name">${contact.name}</h2>
-                              <h2 class="card__phone">${contact.phone}</h2>
-                              <h2 class="card__email">${contact.email}</h2>
+                              <p class="card__phone">${contact.phone}</p>
+                              <p class="card__email">${contact.email}</p>
                               <div class="actions">
                                     <button data-id="${contact.id}" class="actions__btn  actions__btn--delete" >Eliminar</button>
                               </div>
