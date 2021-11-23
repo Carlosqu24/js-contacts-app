@@ -1,3 +1,6 @@
+import { validateInputs } from "./js/form_validation.js";
+
+
 const $nameInput = document.querySelector("#name");
 const $phoneInput = document.querySelector("#phone");
 const $emailInput = document.querySelector("#email");
@@ -62,7 +65,8 @@ const getContacts = () => {
 const showContacts = (contacts) => {
 
       if (contacts == null || contacts == false) {
-            $contactsFlex.innerHTML = "<h2>¡No hay contactos!</h2>"
+            $contactsFlex.innerHTML = "<h2 class='title'>¡No hay contactos!</h2>";
+
       } else {
             let html = "";
 
@@ -100,6 +104,10 @@ document.addEventListener("DOMContentLoaded", getContacts);
 document.addEventListener("click", e => {
       if (e.target === $btnSaveContact) saveContact(e);
       if (e.target.matches(".actions__btn--delete")) deleteContact(e);
+
+      
 });
+
+document.addEventListener("keyup", validateInputs);
 
 $inputFileReader.addEventListener("change", e => readFile($inputFileReader.files[0]));

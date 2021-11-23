@@ -99,6 +99,24 @@ h2 {
       border: 1px solid rgb(0, 0, 0);
 }
 
+.form-control--error {
+      border: 1px solid rgba(233, 5, 5, 0.705);
+      background: rgba(255, 189, 189, 0.185);
+}
+
+.form-control--error:focus {
+      border: 1px solid rgba(233, 5, 5, 0.705);
+}
+
+.form-control--success {
+      border: 1px solid rgba(34, 170, 21, 0.705);
+      background: rgba(183, 255, 177, 0.185);
+}
+
+.form-control--success:focus {
+      border: 1px solid rgba(34, 170, 21, 0.705);
+}
+
 .form__form-control--save {
       width: 150px;
 
