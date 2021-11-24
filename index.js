@@ -1,4 +1,4 @@
-import { validateInputs } from "./js/form_validation.js";
+import { validateInputs, removeInputClasses } from "./js/form_validation.js";
 
 
 const $nameInput = document.querySelector("#name");
@@ -95,19 +95,24 @@ const readFile = (file) => {
       reader.addEventListener("load", e => {
             let $imgPreview = document.querySelector("#imgPreview");
             $imgPreview.src = e.currentTarget.result;
-      })
+      });
 };
+
 
 
 document.addEventListener("DOMContentLoaded", getContacts);
 
 document.addEventListener("click", e => {
-      if (e.target === $btnSaveContact) saveContact(e);
-      if (e.target.matches(".actions__btn--delete")) deleteContact(e);
+      if (e.target === $btnSaveContact) {
+            saveContact(e);
+            removeInputClasses();
+      };
 
-      
+      if (e.target.matches(".actions__btn--delete")) deleteContact(e);
 });
 
-document.addEventListener("keyup", validateInputs);
+document.addEventListener("keyup", (e) => {
+      validateInputs(e);
+});
 
 $inputFileReader.addEventListener("change", e => readFile($inputFileReader.files[0]));

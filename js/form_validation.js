@@ -1,26 +1,25 @@
 export function validateInputs(e) {
-
       const nameRegExp = `[A-ZÄËÏÖÜÁÉÍÓÚÂÊÎÔÛÀÈÌÒÙ][a-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ]+(?:\s+[a-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ]+)+`;
       const phoneRegExp = `[ -]*([0-9][ -]*){8}`;
       const emailRegExp = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
 
       if(e.target.id == 'name') {
 
-            validateRegExp(nameRegExp, e.target, "form-control--success", "form-control--error")
+            validateRegExp(nameRegExp, e.target, "form-control--success", "form-control--error");
 
       };
 
       if(e.target.id == 'phone') {
             
-            validateRegExp(phoneRegExp, e.target, "form-control--success", "form-control--error")
+            validateRegExp(phoneRegExp, e.target, "form-control--success", "form-control--error");
 
       };
 
       if(e.target.id == 'email') {
 
-            validateRegExp(emailRegExp, e.target, "form-control--success", "form-control--error")
+            validateRegExp(emailRegExp, e.target, "form-control--success", "form-control--error");
 
-      }
+      };
 };
 
 function validateRegExp(expRegString, input, successClass, errorClass) {
@@ -33,7 +32,6 @@ function validateRegExp(expRegString, input, successClass, errorClass) {
 };
 
 function validateClasses(input, successClass, errorClass, isTrue = true) {
-
       if(isTrue) {
             if(input.classList.contains(successClass)) {
                   input.classList.replace(successClass, errorClass);
@@ -47,4 +45,18 @@ function validateClasses(input, successClass, errorClass, isTrue = true) {
                   input.classList.add(successClass);
             };
       };
+};
+
+export function removeInputClasses() {
+      const $inputs = document.querySelectorAll('input');
+
+      $inputs.forEach(input => {
+            if (input.classList.contains("form-control--success")) {
+                  input.classList.remove("form-control--success");
+            };
+
+            if (input.classList.contains("form-control--error")) {
+                  input.classList.remove("form-control--error");
+            };
+      });
 };
