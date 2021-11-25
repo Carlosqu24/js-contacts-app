@@ -10,6 +10,25 @@ const clearInputs = () => {
       document.querySelector('#imgPreview').src = "./images/not-found.png";
 };
 
+function validateSave() {
+      const $inputs = document.querySelectorAll(".form__form-control[type=text]")
+
+      let errors = [];
+
+      $inputs.forEach(input => {
+            if (input.classList.contains("form-control--error") || !input.classList.contains('form-control--success')) {
+                  errors.push("Error")
+            }
+      });
+
+      if (errors.length >= 1) {
+            alert("Rellene bien los campos");
+            return false;
+      } else {
+            return true
+      };
+};
+
 export const saveContact = (e) => {
       e.preventDefault();
 
@@ -17,6 +36,10 @@ export const saveContact = (e) => {
       const phone =$phoneInput.value;
       const email = $emailInput.value;
       const urlImg = document.querySelector('#imgPreview').src;
+
+      if (!validateSave()) {
+            return;
+      };
 
       const contact = {
             id: Date.now(),

@@ -6,6 +6,7 @@ import { readFile } from "./js/file_reader.js";
 const $inputFileReader = document.querySelector("#inputFileReader");
 const $btnSaveContact = document.querySelector("#btn-saveContact");
 
+
 // EVENTS
 document.addEventListener("DOMContentLoaded", getContacts);
 
